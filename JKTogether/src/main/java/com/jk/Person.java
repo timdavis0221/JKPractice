@@ -4,15 +4,35 @@ import java.util.stream.IntStream;
 
 public class Person {
 
+    String name;
+    float weight;
+    float height;
+
+    public Person(float weight, float height){
+        this.weight = weight;
+        this.height = height;
+    }
+
+    public Person(String name, float weight, float height){
+        // reuse constructor
+        this(weight, height);
+        this.name = name;
+    }
+
     public Person() {
-        System.out.println("Init person constructor");
+        System.out.println("default constructor");
+    }
+
+    public float bmi(){
+        float bmi = weight / (height * height);
+        return bmi;
     }
 
     public void sayHello(){
         System.out.println("Hello Java !");
     }
 
-    public int[] getSumOfIntArray(int N){
+    /*public int[] getSumOfIntArray(int N){
 
         int[] result = new int[N];
 
@@ -29,6 +49,6 @@ public class Person {
             result = new int[] { -1 };
         }
         return result;
-    }
+    }*/
 
 }
