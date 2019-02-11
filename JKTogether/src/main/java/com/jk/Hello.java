@@ -7,6 +7,10 @@ public class Hello {
         person.weight = 75.5f;
         person.height = 1.8f;
         System.out.println(person.bmi());
+
+        char c = 'A'; // unicode 65
+        System.out.println(c > 'a'); // unicide 67
+
         /*int[] getResult = person.getSumOfIntArray(1);
         for (int num : getResult)
             System.out.println(num);*/
