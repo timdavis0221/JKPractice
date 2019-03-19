@@ -2,6 +2,11 @@ package com.jk;
 
 public class Hello {
     public static void main(String[] args) {
+
+        String str = "abcde";
+        System.out.println(str.charAt(2));
+        System.out.println(str.substring(3));
+
         Person person = new Person("Tim", 66.5f, 1.9f);
         person.sayHello();
         person.weight = 75.5f;

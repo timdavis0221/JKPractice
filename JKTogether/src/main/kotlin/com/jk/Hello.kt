@@ -1,6 +1,13 @@
 package com.jk
 
 fun main(args: Array<String>) {
+
+    var str:String? = "abcdr"
+    str = null
+    println(str!!.length) // !! means handle NullPointerException by yourself
+    println(str?.get(2))
+    println(str?.substring(3))
+
     // assign parameter to associated position directly
     val h = Human(weight = 75.4f, height = 1.8f)
     h.hello()
@@ -24,8 +31,7 @@ class Human (var name : String = "Tim",
 //    constructor(name: String, weight: Float, height: Float) : this(weight, height)
 
     fun bmi() : Float{
-        var bmi = weight/(height*height)
-        return bmi
+        return weight/(height*height)
     }
 
     fun hello(){
