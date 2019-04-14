@@ -33,7 +33,7 @@ class StudentKotlin (var name : String?, var english : Int, var math : Int){
 
     private fun passOrFailed() = if (getAverage() >= 60) ", PASS" else ", FAILED"
 
-    private fun grading() = when(getAverage()){
+    internal fun grading() = when(getAverage()){
         in 90..100 -> 'A'
         in 80..89 -> 'B'
         in 70..79 -> 'C'
@@ -41,7 +41,7 @@ class StudentKotlin (var name : String?, var english : Int, var math : Int){
         else -> 'F'
     }
 
-    private fun getAverage() = (math + english)/2
+    internal fun getAverage() = (math + english)/2
 
     fun highestScore() = if (english > math) {
             println("english score:")
