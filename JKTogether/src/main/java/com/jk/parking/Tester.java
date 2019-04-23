@@ -6,14 +6,26 @@ import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.Instant;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 
 public class Tester {
     public static void main(String[] args) {
-        java8();
-        java();
+        LocalDateTime enterTime = LocalDateTime.of(2019, 04, 23, 22, 0),
+                      leaveTime = LocalDateTime.of(2019, 04, 24, 0, 0);
+
+        Car car = new Car("6208-RF", enterTime);
+        car.setLeave(leaveTime);
+        System.out.println("parking time (mins): " + car.getDuration());
+
+        long hours = (long) Math.ceil(car.getDuration()/60.0);
+        System.out.println("parking time (hrs): " + hours);
+        System.out.println("charge: " + (30 * hours));
+
+//        java8();
+//        java();
     }
 
     private static void java8() {
