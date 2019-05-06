@@ -1,11 +1,17 @@
 package com.jk.student
 
 import java.util.*
+import javax.xml.bind.DataBindingException
 
 fun main() {
 //    userInput()
-    var student = StudentKotlin("Tim", 70, 70)
+    StudentKotlin.pass = 50
+    var student = StudentKotlin("Tim", 40, 70)
+    var student2 = StudentKotlin("Tim", 55, 70)
+    var student3 = StudentKotlin("Tim", 50, 70)
     student.print()
+    student2.print()
+    student3.print()
     print("High score: ${student.highestScore()}")
 }
 
@@ -25,6 +31,18 @@ private fun userInput() {
 }
 
 class StudentKotlin (var name : String?, var english : Int, var math : Int){
+    // static object like java
+    companion object {
+        @JvmStatic // for easy access from java
+        var pass = 60
+        @JvmStatic
+        fun test(value: Int) {
+            println(value)
+        }
+        @JvmField
+        var STATIC_OBJ = Date()
+    }
+
     fun print(){
         println("$name\t$english\t$math\t${getAverage()}\t${passOrFailed()}\t${grading()}")
         /*print(name + "\t" + english + "\t" + math + "\t" + getAverage() + passOrFailed())

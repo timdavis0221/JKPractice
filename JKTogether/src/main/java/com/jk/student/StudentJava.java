@@ -4,6 +4,7 @@ public class StudentJava {
     String name;
     int english;
     int math;
+    static int pass = 60;
 
     public StudentJava(String name, int english, int math) {
         this.name = name;
@@ -28,7 +29,7 @@ public class StudentJava {
 
         System.out.println(name + "\t" + english + "\t" + math +
                 ", Average: " + getAverage() + "\t" +
-                ((getAverage() >= 60) ? ", PASS" : ", FAILED"));
+                ((getAverage() >= pass) ? ", PASS" : ", FAILED"));
 
         char grading;
 
