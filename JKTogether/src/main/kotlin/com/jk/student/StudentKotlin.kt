@@ -1,4 +1,4 @@
-package com.jk.student
+package com.jk.student.kt
 
 import java.util.*
 import javax.xml.bind.DataBindingException
@@ -9,6 +9,10 @@ fun main() {
     var student = StudentKotlin("Tim", 40, 70)
     var student2 = StudentKotlin("Tim", 55, 70)
     var student3 = StudentKotlin("Tim", 50, 70)
+
+    val graduateStudent = GraduateStudent("Yao", 55, 65, 60)
+    graduateStudent.print()
+
     student.print()
     student2.print()
     student3.print()
@@ -30,7 +34,19 @@ private fun userInput() {
     student.nameCheck()
 }
 
-class StudentKotlin (var name : String?, var english : Int, var math : Int){
+class GraduateStudent(name: String?, english: Int, math: Int, var thesis: Int) : StudentKotlin(name, english, math){
+    companion object {
+        var pass = 70
+    }
+
+    override fun print() {
+        println("$name\t$english\t$math\t$thesis\t${getAverage()}\t${passOrFailed()}\t${grading()}")
+    }
+
+    override fun passOrFailed() = if (getAverage() >= pass) ", PASS" else ", FAILED"
+}
+
+open class StudentKotlin (var name : String?, var english : Int, var math : Int){
     // static object like java
     companion object {
         @JvmStatic // for easy access from java
@@ -43,13 +59,13 @@ class StudentKotlin (var name : String?, var english : Int, var math : Int){
         var STATIC_OBJ = Date()
     }
 
-    fun print(){
+    open fun print(){
         println("$name\t$english\t$math\t${getAverage()}\t${passOrFailed()}\t${grading()}")
         /*print(name + "\t" + english + "\t" + math + "\t" + getAverage() + passOrFailed())
         println("\tScore level: " + grading())*/
     }
 
-    private fun passOrFailed() = if (getAverage() >= 60) ", PASS" else ", FAILED"
+    open fun passOrFailed() = if (getAverage() >= 60) ", PASS" else ", FAILED"
 
     internal fun grading() = when(getAverage()){
         in 90..100 -> 'A'

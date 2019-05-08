@@ -4,7 +4,7 @@ public class StudentJava {
     String name;
     int english;
     int math;
-    static int pass = 60;
+    static int pass = 50;
 
     public StudentJava(String name, int english, int math) {
         this.name = name;

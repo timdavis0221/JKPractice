@@ -1,6 +1,6 @@
 package com.jk
 
-import com.jk.student.StudentKotlin
+import com.jk.student.kt.StudentKotlin
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 

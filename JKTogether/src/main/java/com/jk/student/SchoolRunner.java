@@ -1,5 +1,7 @@
 package com.jk.student;
 
+import com.jk.student.kt.StudentKotlin;
+
 import java.util.Date;
 import java.util.Scanner;
 
@@ -17,6 +19,11 @@ public class SchoolRunner {
         StudentJava student = new StudentJava("Tim", 90, 80);
         StudentJava student2 = new StudentJava("Iven", 60, 40);
         StudentJava student3 = new StudentJava("Eleven", 30, 20);
+
+        // practice for extends class
+        GraduateStudent graduateStudent = new GraduateStudent("Yao", 55, 65, 60);
+        graduateStudent.printScore();
+
         student.printScore();
         student2.printScore();
         student3.printScore();
