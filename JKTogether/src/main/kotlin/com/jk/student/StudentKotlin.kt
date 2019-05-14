@@ -40,6 +40,7 @@ class GraduateStudent(name: String?, english: Int, math: Int, var thesis: Int) :
     }
 
     override fun print() {
+        grading()
         println("$name\t$english\t$math\t$thesis\t${getAverage()}\t${passOrFailed()}\t${grading()}")
     }
 

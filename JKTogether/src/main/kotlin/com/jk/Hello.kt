@@ -1,6 +1,12 @@
 package com.jk
 
+import com.jk.student.kt.StudentKotlin
+
 fun main(args: Array<String>) {
+
+    // access internal method in same module
+    val student = StudentKotlin("Tom", 20, 20)
+    student.grading()
 
     var str:String? = "abcdr"
     str = null
